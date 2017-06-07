@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeTB"
+        android:icon="@drawable/home"
+        android:menuCategory="alternative"
+        android:orderInCategory="101"
+        android:title=""
+        
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/notificationTB"
+        android:icon="@drawable/notifications"
+        android:orderInCategory="102"
+        android:title=""
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/createTB"
+        android:orderInCategory="103"
+        android:icon="@drawable/create"
+        app:showAsAction="always"
+        android:title=""></item>
+    <item
+        android:id="@+id/explorerTB"
+        android:orderInCategory="104"
+        android:icon="@drawable/explorer"
+        app:showAsAction="always"
+        android:title=""></item>
+    <item
+        android:id="@+id/profileiconTB"
+        android:icon="@drawable/profileicon"
+        android:orderInCategory="105"
+        android:title=""
+        app:showAsAction="always"></item>
+
+</menu>
