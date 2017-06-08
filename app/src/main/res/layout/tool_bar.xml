@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fc1e3e"
+    app:theme="@style/MYToolBarTheme">
 
-app:theme="@style/MYToolBarTheme"
-android:background="@android:color/holo_blue_bright"
-android:elevation="4dp"></android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:id="@+id/HomeLL"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/HomeBtnTB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="17dp"
+                android:layout_weight="1"
+                android:background="@drawable/homet" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/NotLL"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/NotBtnTB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="17dp"
+                android:layout_weight="1"
+                android:background="@drawable/notifications" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/CreateLL"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/CreateBtnTB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="17dp"
+                android:layout_weight="1"
+                android:background="@drawable/create" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ExplorerLL"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/ExplorerBtnTB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="17dp"
+                android:layout_weight="1"
+                android:background="@drawable/explorer" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ProfLL"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/ProfBtnTB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="17dp"
+                android:layout_weight="1"
+                android:background="@drawable/profileicon" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.Toolbar>

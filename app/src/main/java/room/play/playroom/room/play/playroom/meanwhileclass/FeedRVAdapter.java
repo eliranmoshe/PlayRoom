@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,7 +30,7 @@ ArrayList<FeedObdject> allFeed;
 
     @Override
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.feed_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.feed_listview_item, parent, false);
         MyHolder myHolder = new MyHolder(view);
         return myHolder;
     }
@@ -47,18 +48,18 @@ ArrayList<FeedObdject> allFeed;
 
     public class MyHolder extends RecyclerView.ViewHolder {
         ImageView profileIVItem;
-        ImageButton joinIBItem;
+        Button joinIBItem;
         TextView nameTVItem;
-        TextView DateTVItem;
+        TextView styleTVItem;
         ImageView songIVITem;
         TextView listeningTVItem;
         TextView likeTVITem;
         public MyHolder(View itemView) {
             super(itemView);
             profileIVItem= (ImageView) itemView.findViewById(R.id.ProfileIVItem);
-            joinIBItem= (ImageButton) itemView.findViewById(R.id.JoinIB);
+            joinIBItem= (Button) itemView.findViewById(R.id.joinBtn);
             nameTVItem= (TextView) itemView.findViewById(R.id.NameTVItem);
-            DateTVItem= (TextView) itemView.findViewById(R.id.DateTVItem);
+            styleTVItem= (TextView) itemView.findViewById(R.id.styleTVItem);
             songIVITem= (ImageView) itemView.findViewById(R.id.SongIVItem);
             listeningTVItem= (TextView) itemView.findViewById(R.id.ListeningTVItem);
             likeTVITem= (TextView) itemView.findViewById(R.id.LikeTVItem);
@@ -73,7 +74,7 @@ ArrayList<FeedObdject> allFeed;
         {
             profileIVItem.setImageResource(feedObdject.profileIV);
             nameTVItem.setText(feedObdject.name);
-            DateTVItem.setText(feedObdject.date);
+            styleTVItem.setText(feedObdject.date);
             songIVITem.setImageResource(feedObdject.ThumdnailIV);
             likeTVITem.setText(""+feedObdject.NumOfLIke);
             listeningTVItem.setText(""+feedObdject.NumOfLIsting);
