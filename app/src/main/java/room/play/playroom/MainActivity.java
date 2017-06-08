@@ -19,8 +19,9 @@ import java.util.ArrayList;
 
 import room.play.playroom.room.play.playroom.meanwhileclass.FeedObdject;
 import room.play.playroom.room.play.playroom.meanwhileclass.FeedRVAdapter;
+import room.play.playroom.room.play.playroom.meanwhileclass.FragmentChanger;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,FragmentChanger {
     private Toolbar toolbar;
     RecyclerView feedRV;
     FeedRVAdapter adapter;
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.CreateBtnTB:
                 Toast.makeText(this, "create", Toast.LENGTH_SHORT).show();
                 createLL.setBackgroundColor(Color.GRAY);
+                AddCreateFragment();
                 break;
             case R.id.ExplorerBtnTB:
                 Toast.makeText(this, "explorer", Toast.LENGTH_SHORT).show();
@@ -100,5 +102,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 profLL.setBackgroundColor(Color.GRAY);
                 break;
         }
+    }
+
+    @Override
+    public void AddCreateFragment() {
+        CreateFragment createFragment=new CreateFragment();
+        getFragmentManager().beginTransaction().add(R.id.frag_layout,createFragment,"createfragment").commit();
     }
 }
