@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "profile", Toast.LENGTH_SHORT).show();
                 profLL.setBackgroundColor(Color.GRAY);
                 break;
-        }
+        }//
     }
 
     @Override
