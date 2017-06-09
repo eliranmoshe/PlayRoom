@@ -6,4 +6,5 @@ package room.play.playroom.room.play.playroom.meanwhileclass;
 
 public interface FragmentChanger {
     public void  AddCreateFragment();
+    public void  AddFeedFragment();
 }

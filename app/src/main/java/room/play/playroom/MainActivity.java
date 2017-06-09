@@ -23,8 +23,7 @@ import room.play.playroom.room.play.playroom.meanwhileclass.FragmentChanger;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,FragmentChanger {
     private Toolbar toolbar;
-    RecyclerView feedRV;
-    FeedRVAdapter adapter;
+
     Button createBtnTB,explorerBtnTB,homeBtnTB,notBtnTB,profBtnTB;
     LinearLayout createLL,explorerLL,homeLL,notLL,profLL;
 
@@ -52,20 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //getFragmentManager().beginTransaction().replace(R.id.main_container,logIn).commit();
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        feedRV= (RecyclerView) findViewById(R.id.FeedRV);
-        ArrayList<FeedObdject> allFeed=new ArrayList<>();
-        allFeed.add(new FeedObdject("Mikey James","Hot rining playlist|22:45",R.drawable.person_image2_bg_x,R.drawable.song_image_bg_x,45,12745));
-        allFeed.add(new FeedObdject("David Boref","Relaxing Music|45:12",R.drawable.person_image_bg_x,R.drawable.song,50,9458));
-        allFeed.add(new FeedObdject("Mikey James","Hot rining playlist|22:45",R.drawable.person_image2_bg_x,R.drawable.song_image_bg_x,45,12745));
-        allFeed.add(new FeedObdject("David Boref","Relaxing Music|45:12",R.drawable.person_image_bg_x,R.drawable.song,50,9458));
-        allFeed.add(new FeedObdject("Mikey James","Hot rining playlist|22:45",R.drawable.person_image2_bg_x,R.drawable.song_image_bg_x,45,12745));
-        allFeed.add(new FeedObdject("David Boref","Relaxing Music|45:12",R.drawable.person_image_bg_x,R.drawable.song,50,9458));
-        allFeed.add(new FeedObdject("Mikey James","Hot rining playlist|22:45",R.drawable.person_image2_bg_x,R.drawable.song_image_bg_x,45,12745));
-        allFeed.add(new FeedObdject("David Boref","Relaxing Music|45:12",R.drawable.person_image_bg_x,R.drawable.song,50,9458));
-        allFeed.add(new FeedObdject("Mikey James","Hot rining playlist|22:45",R.drawable.person_image2_bg_x,R.drawable.song_image_bg_x,45,12745));
-        feedRV.setLayoutManager(new LinearLayoutManager(this));
-        adapter=new FeedRVAdapter(allFeed,this);
-        feedRV.setAdapter(adapter);
+        AddFeedFragment();
+
     }
 
     @Override
@@ -81,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             case R.id.CreateBtnTB:
                 Toast.makeText(this, "create", Toast.LENGTH_SHORT).show();
-                createLL.setBackgroundColor(Color.GRAY);
+
                 AddCreateFragment();
                 break;
             case R.id.ExplorerBtnTB:
@@ -91,7 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.HomeBtnTB:
                 Toast.makeText(this, "home", Toast.LENGTH_SHORT).show();
-                homeLL.setBackgroundColor(Color.GRAY);
+                AddFeedFragment();
+
                 break;
             case R.id.NotBtnTB:
                 Toast.makeText(this, "notification", Toast.LENGTH_SHORT).show();
@@ -101,12 +89,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "profile", Toast.LENGTH_SHORT).show();
                 profLL.setBackgroundColor(Color.GRAY);
                 break;
-        }//
+        }
     }
 
     @Override
     public void AddCreateFragment() {
+        createLL.setBackgroundColor(Color.GRAY);
         CreateFragment createFragment=new CreateFragment();
-        getFragmentManager().beginTransaction().add(R.id.frag_layout,createFragment,"createfragment").commit();
+        getFragmentManager().beginTransaction().replace(R.id.frag_layout,createFragment,"createfragment").commit();
+    }
+
+    @Override
+    public void AddFeedFragment() {
+        homeLL.setBackgroundColor(Color.GRAY);
+        FeedFragment feedFragment=new FeedFragment();
+        getFragmentManager().beginTransaction().replace(R.id.frag_layout,feedFragment,"feed").commit();
     }
 }

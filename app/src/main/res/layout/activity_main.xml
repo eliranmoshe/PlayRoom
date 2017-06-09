@@ -25,11 +25,7 @@
         android:layout_weight="1.6"
         android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/FeedRV"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="0dp" />
+
     </LinearLayout>
 
     <LinearLayout
